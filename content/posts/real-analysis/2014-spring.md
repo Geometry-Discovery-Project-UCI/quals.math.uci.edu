@@ -71,7 +71,7 @@ $$
 for all $x\in (a,b)$.
 
 #proof
-Using Holder Inequality, we have
+Using Hölder's Inequality, we have  
 $$
                         |F(x+h)-F(x)|=\left|\int_x^{x+h} f(t) dt\right|\leq \left(\int_x^{x+h}|f(t)|^4
                         dt\right)^{1/4}\cdot \left(\int_x^{x+h} dt\right)^{3/4}.

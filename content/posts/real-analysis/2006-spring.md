@@ -5,18 +5,18 @@
 Let $f\in L^p\cap L^q$ with $1\leq p < q\leq\infty$. Prove that $f\in L^r$ for all $p < r < q$.
 
 #proof
-See [Problem 5 of 2023 Winter Real Analysis]().
+See [Problem 5 of 2023 Winter Real Analysis Exam](/posts/real-analysis/2023-spring/).
 ::
 
 ::ProblemBlock{number=2}
 #problem
-Let $\mathcal M$ be the Lebesgue measurable sets on the real line. Consider two measures on $\mathcal M$: Lebesgue measure $m$ and the counting measure $\tau$, where for $A\in\mathcal M$ we set $\tau(A)$ to be the number of points in $A$. Show that $m$ is absolutely continuous with respect to $\tau$, but that $\dfrac{dm}{d\tau}$ doesn't exist, i.e., there is no measureable function $h$ such that $m(A)=\int_A hd\tau$ for all $A\in\mathcal M$. Does this contradict to the Radon-Nikodym Theorem?
+Let $\mathcal M$ be a Lebesgue measurable sets on the real line. Consider two measures on $\mathcal M$: Lebesgue measure $m$ and the counting measure $\tau$, where for $A\in\mathcal M$ we set $\tau(A)$ to be the number of points in $A$. Show that $m$ is absolutely continuous with respect to $\tau$, but that $\dfrac{dm}{d\tau}$ doesn't exist, i.e., there is no measureable function $h$ such that $m(A)=\int_A hd\tau$ for all $A\in\mathcal M$. Does this contradict to the Radon-Nikodym Theorem?
 
 #proof
-See [Radon-Nikodym](https://en.wikipedia.org/wiki/Radon–Nikodym_theorem). The Radon-Nikodym derivative doesn't exist because:
+See [Radon-Nikodym Theorem on Wikipedia](https://en.wikipedia.org/wiki/Radon–Nikodym_theorem). The Radon-Nikodym derivative doesn't exist because:
 
-1. $m$, $\tau$ live in two different $\sigma$-algebra
-2. $\tau$ is not $\sigma$-finte
+1. $m$, $\tau$ live in two different $\sigma$-algebra;
+2. $\tau$ is not $\sigma$-finite.
 ::
 
 ::ProblemBlock{number=3}
@@ -29,7 +29,7 @@ Given a measure space $(X,\mathfrak U,\mu)$, let $(f_n\mid n\in\mathbb N)$ and $
 Show that the sequence $(f_n\mid n\in\mathbb N)$ convergens to $f$ a.e. on $D$.
 
 #proof
-This problem is similar to [Problem 4 of 2023 Winter Real Analysis]() and [Problem 2 of 2014 Spring Real Analysis](). Here we provide a proof for the sake of completeness.
+This problem is similar to [Problem 4 of 2023 Winter Real Analysis Exam](/posts/real-analysis/2023-spring) and [Problem 2 of 2014 Spring Real Analysis Exam](/posts/real-analysis/2014-spring). Here we provide a proof for the sake of completeness.
 
 Define
 
