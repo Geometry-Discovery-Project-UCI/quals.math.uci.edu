@@ -3,11 +3,11 @@ html {
 }
 
 .katex {
-    @apply text-xl;
+    @apply text-xs;
 }
 
 .katex-display {
-    @apply overflow-x-auto overflow-y-hidden;
+    @apply overflow-x-auto overflow-y-hidden text-lg;
 }
 
 @font-face {
