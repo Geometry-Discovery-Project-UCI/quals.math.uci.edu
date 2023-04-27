@@ -7,11 +7,11 @@ html {
 }
 
 .katex {
-    @apply text-xs;
+    @apply text-base;
 }
 
 .katex-display {
-    @apply overflow-x-auto overflow-y-hidden text-lg;
+    @apply overflow-x-auto overflow-y-hidden text-base;
 }
 
 @font-face {
