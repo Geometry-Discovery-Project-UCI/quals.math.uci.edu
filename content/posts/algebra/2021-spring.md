@@ -1,7 +1,3 @@
----
-draft: true
----
-
 # 2021 Spring Algebra
 
 ::ProblemBlock{number=1}
@@ -148,30 +144,85 @@ Let $K$ denote a splitting field of $(x^2-2)(x^2+3)$ over $\mathbb{Q}$
 (c) Write out the intermediate fields between $K$ and $\mathbb{Q}$, and for each intermediate field, list the subgroup of $Gal(K/\mathbb{Q})$ to which it corresponds. (No justification is necessary for this part.)
 
 #proof
-(a) 
+(a) The four roots of this polynoial are $\pm\sqrt{2}$, $\pm\sqrt{-3}$. It's clear that the tower $\mathbb{Q}\subseteq\mathbb{Q}(\sqrt{2})\subseteq\mathbb{Q}(\sqrt{2},\sqrt{-3})$ consists of two extensions of degree 2 (because the middle field is real and the top field is not real, we know that the second field extension is not degree 1). Thus the degree is 4.
+
+(b) These correspond to the four possibilities $\sqrt{2}\mapsto \pm\sqrt{2}$ and $\sqrt{-3}\mapsto \pm\sqrt{-3}$. Because automorphisms must send roots of a polynomial to other roots of a polynomial, these are the only possibilities, and because we know the extension is Galois (being a splitting field over a characteristic zero field) and of degree 4, we know there are exactly 4 automorphisms, and hence each of these possibilities is indeed an automorphism.
+
+(c) Name these four possibilities $\rho_{++},\rho_{+-},\rho_{-+},\rho_{--}$ (so $\rho_{++}$ is the identity map). We have
+
+- $\mathbb{Q}$ corresponds to $\{\rho_{++},\rho_{+-},\rho_{-+},\rho_{--}\}$
+- $\mathbb{Q}(\sqrt{2},\sqrt{-3})$ corresponds to $\{\rho_{++}\}$
+- $\mathbb{Q}(\sqrt{2})$ corresponds to $\{\rho_{++},\rho_{+-}\}$
+- $\mathbb{Q}(\sqrt{-3})$ corresponds to $\{\rho_{++},\rho_{-+}\}$
+- $\mathbb{Q}(\sqrt{-6})$ corresponds to $\{\rho_{++},\rho_{--}\}$
 
 ::
 
 ::ProblemBlock{number=8}
 #problem
-
+Let $p$ be a prime and $m$ be a positive integer satisfying $1<m<p$. Let $K/F$ be a Galois extension where $[K:F]=mp^n$ where $n$ is a positive integer. Prove that there is a subfield $E$ of $K$ containing $F$ with $F\subsetneq E\subsetneq K$ such that $E/F$ is Galois.
 
 #proof
+Let $G = Gal(K/F)$ and let $E$ be a subfield of $K$ containing $F$. Let $H$ be the subgroup of $G$ corresponding to $E$ under the Galois correspondence. Then $E/F$ is Galois if and only if $H$ is normal in $G$. Therefore, we need only show that $G$ contains a proper non-trivial normal subgroup. That is, $G$ is not simple.
+
+Let $n_p$ be the number of Sylow $p$-subgroups of $G$. By the Sylow Theorems, $n_p|m$ and $n_p\equiv 1 \mod p$. Since $p>m$, $n_p=1$. Since $G$ has a unique Sylow $p$-subgroup, this subgroup in normal in $G$. The fixed field $E$ of this subgroup satisfies $F\subsetneq E\subsetneq K$ and $E/F$ Galois.
 
 ::
 
 ::ProblemBlock{number=9}
 #problem
-
+Determine the number of isomorphism classes of $\F_3[x]$-modules of order 9. Include a full justification of your claim.
 
 #proof
+An $\F_3[x]$-module is a vector space $V$ over $\F_3$ together with a linear transformation $T:V\to V$. (The linear transformation comes from the action of $x$ on $V$.) The order of the $\F_3[x]$-module is $|V|$. So in our case, $V$ is a 2-dimensional vector space over $\F_3$.
+
+The classification of modules over a PID applied to the case of $\F_3[x]$ (which is a PID) says
+$$
+V \cong \F_3[x]/(a_1(x))\oplus\cdots\oplus \F_3[x]/(a_m(x))
+$$
+where each $a_i(x)\in\F_3[x]$ is a monic polynomial of degree at least 1 and $a_i(x)|a_{i+1}(x)$ for $i=1,\ldots,m-1$. These $a_i(x)$ are the invariant factors of the $\F_3[x]$-module. Moreover, two such modules are isomorphic if and only if they have the same factors.
+
+It is clear that $|\F_3[x]/(f(x))|=3^{\deg f(x)}$. For example, note that $1,x,\ldots,x^{\deg f(x)-1}$ is a basis for this quotient vector space. Therefore, we need only list the possible invariant factors for which $\deg(a_1(x)\cdots a_m(x)=2$. There are two possibilities:
+
+- $m=1$ and $a_i(x)$ is a monic polynomial of degree 2. There are 9 such polynomials. (You do not have to list them.)
+- $m=2$. In this case $a_1(x)$ and $a_2(x)$ are linear polynomials. Since $a_1(x)|a_2(x)$ they must be the same linear polynomial. There are 3 possibilities since there are 3 monic linear polynomials in $\F_3[x]$.
+
+Thus there are 12 such $\F_3[x]$-modules up to isomorphism.
 
 ::
 
 ::ProblemBlock{number=10}
 #problem
-
+Let $m,n$ be positive integers and let $d= gcd(m,n)$. Prove that 
+$$
+\Z/n\Z \otimes_\Z \Z/m\Z \cong \Z/d\Z
+$$
 
 #proof
+The tensor product is a $\Z$-module, a finite abelian group. Since 1 is a generator for $\Z/n\Z$ and 1 is a generator for $\Z/m\Z$, we see that $1\otimes 1$ is a generating set for $\Z/n\Z\otimes_\Z \Z/m\Z$. So this tensor product is a cyclic group.
+
+We now show that the order of this group divides $d$. We have
+$$
+n\cdot(1\otimes 1) = n\cdot 1\otimes 1 = 0\otimes 1 = 0
+$$
+and also
+$$
+m\cdot(1\otimes 1) = 1\otimes m\cdot 1 = 1\otimes 0 = 0
+$$
+Therefore the order of this cyclic group divides $n$ and divides $m$, so it divides $\gcd(m,n)=d$.
+
+To show that $\Z/n\Z\otimes_\Z\Z/m\Z \cong \Z/d\Z$ we show that there is a surjective $\Z$-module homomorphism from $\Z/n\Z\otimes_\Z\Z/m\Z$ to $\Z/d\Z$. We know that $\Z$-module homomorphisms from $\Z/n\Z\otimes_\Z\Z/m\Z$ to $\Z/d\Z$ correspond to $\Z$-bilinear maps 
+$$
+B:\Z/n\Z\otimes_\Z\Z/m\Z \to \Z/d\Z
+$$
+
+Therefore, we need only construct such a map. Let $B(x,y)=xy\mod d$. We need to check that $B(ax_1+x_2,y)=aB(x_1,y)+B(x_2,y)$ and that $B(x,ay_1+y_2) = aB(x,y_1)+B(x,y_2)$. Checking each claim is straightforward. For example,
+$$
+B(ax_1+x_2,y) = ax_1y + x_2y \mod d
+$$
+$$
+aB(x_1,y)+B(x_2,y) = ax_1y\mod d + x_2y\mod d
+$$
+
 
 ::
