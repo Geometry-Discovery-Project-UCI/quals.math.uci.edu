@@ -17,7 +17,10 @@ export default defineNuxtConfig({
         ['rehype-mathjax', {
           tex: {
             macros: {
-              eps: '{\\varepsilon}'
+              eps: '{\\varepsilon}',
+              Q: '{\\mathbb{Q}}',
+              R: '{\\mathbb{R}}',
+              C: '{\\mathbb{C}}'
             }
           }
         }]
