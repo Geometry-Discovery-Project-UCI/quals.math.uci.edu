@@ -15,5 +15,14 @@
 const links = [{
   title: 'Geometry Discovery Project',
   url: 'https://gdp.math.uci.edu'
-}]
+},
+{
+  title: 'UC Irvine MATH CEO',
+  url: 'https://sites.ps.uci.edu/mathceo/'
+},
+{
+  title: 'Math Pre-requisite Review Materials',
+  url: 'https://www.math.uci.edu/~prerequisite-videos/'
+}
+]
 </script>

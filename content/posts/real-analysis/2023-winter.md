@@ -11,7 +11,8 @@ Show that almost every $x\in X$ is an element of at most finitely many
                 $E_n$'s.
 
 #proof
-The condition is equivalent to
+Let $1_{E_n}$ be the characteristic function of $E_n$. Then
+the condition is equivalent to
 $$
         \int_X\sum_{n=1}^\infty 1_{E_n}\leq \sum_{n=1}^\infty \mu(E_n) < \infty. 
 $$
@@ -21,9 +22,9 @@ $$
 
 ::ProblemBlock{number=2}
 #problem
-Let $(X,\mathfrak B,\mu)$ be a $\sigma$-finite measure space and
+Let $(X,\mathfrak B,\mu)$ be a $\sigma$-finite measure  space and
                     let $f : X → [0,\infty)$ be measurable. Let
-                    $E:=\{(x,y)\in X\times[0,\infty)\mid : y\leq f(x)\}$.
+                    $E:=\{(x,y)\in X\times[0,\infty)\mid  y\leq f(x)\}$.
                     Assign the Lebesgue measure $m$ on $[0, \infty)$. Prove that $E$ is a measurable set on
                     $X \times [0, \infty)$ with respect to the product measure $\mu\times m$ and that
 $$
@@ -31,15 +32,17 @@ $$
 $$
 
 #proof
-To see that $E$ is measurable, let $g(x, y) := (f(x), y)$ and $h(x, y) := f(x) -y$. Then $g$ is
-                measurable, whence so is $h$, being the composition of $g$ and the subtraction function. Since
+To see that $E$ is measurable, let  $h(x, y) := f(x) -y$. Then $h$ is
+                measurable, being the composition of $f$ and the subtraction function. Since
                 $E = h^{-1}([0,\infty))$, it follows that $E$ is measurable.
-                Now, by [Tonelli's Theorem  on  Wikipedia](https://en.wikipedia.org/wiki/Fubini%27s_theorem#Tonelli's_theorem), one has
+                Now, by [Tonelli's theorem](https://en.wikipedia.org/wiki/Fubini%27s_theorem#Tonelli's_theorem), one has
 $$
-                (\mu\times m)(E)=\int m(E_x) d\nu(x),
+                (\mu\times m)(E)=\int m(E_x) d\mu(x),
 $$
 where $E_x=\{y\in [0,\infty)\mid (x,y)\in E\} =[0,f(x)]$.
                 So $m(E_x)=f(x)$ and the result follows.
+#remark
+Is the above proof hard to understand? Think harder to understand the beauty and the insight there. 
 ::
 
 ::ProblemBlock{number=3}
@@ -49,9 +52,9 @@ Suppose that $(X,\mathcal B,\mu)$ and $(Y,\mathcal C,\nu)$
                     Moreover, assume that for any measurable set $E\subset Y$, we
                     have
 $$
-                    \nu(E)=\mu(f^{-1}(E)).
+                    \nu(E)=\mu(\Phi^{-1}(E)).
 $$
-Then for any measurable function $f: Y\to\mathbb R$, prove that $f\in L^1(\nu)$
+Then for any measurable function $f: Y\to\mathbb C$, prove that $f\in L^1(\nu)$
                     if and only if $f\circ\Phi\in L^1(\mu)$, in which case,
 $$
                     \int_Y f d\nu=\int_X(f\circ\Phi) d\mu.
@@ -63,7 +66,7 @@ By considering positive and negative parts of the real and imaginary parts of $f
                 result
                 is clear by the assumption on $\Phi$. The case of simple functions follows. For a general
                 $f : Y → [0,\infty)$, write $f$ as an increasing limit of simple functions and apply the [Monotone
-                Convergence Theorem on Wikipedia](https://en.wikipedia.org/wiki/Monotone_convergence_theorem).
+                convergence theorem](https://en.wikipedia.org/wiki/Monotone_convergence_theorem).
 ::
 
 ::ProblemBlock{number=4}
@@ -89,6 +92,23 @@ Then we are in the same situation as in  [Problem 2 of 2014 Spring Real Analysis
 For part (b), use
                         the usual typewriter example (characteristic functions of intervals of length $1/k$ wrapping
                         around the interval).
+#remark
+Some elaboration of the typewriter function. 
+For any $k\geq 2$, define
+$g_k(x)= 1$ if $\sum_{i=1}^k i^{-1}\leq x\leq \sum_{i=1}^{k+1} i^{-1}$ and $0$ otherwise. 
+Let
+$$
+f_k(x)=\sum_{n=0}^\infty g_k(x+n).
+$$
+Then it is easy to verify that 
+$$
+\int_0^1 f_k(x) dx=\frac 1k\to 0.
+$$
+On the other hand, we can verify that there are infinite many pairs of real numbers $(k,n)$ such that 
+$$
+\sum_{i=1}^k\frac 1i\leq x+n\leq\sum_{i=1}^{k+1}\frac 1i
+$$
+for any $x\in [0,1]$. Therefore for any $x$, $f_k(x)$ is not convergent as $k\to\infty$.
 ::
 
 ::ProblemBlock{number=5}
@@ -128,7 +148,7 @@ Let
 $$
         K=\frac{q-p}{q-r},\quad L=\frac{q-p}{r-p}.
 $$
-Then $K,L$ are conjugate numbers, that is, $1/K+1/L=1$. By
+Then $K,L$ are conjugate numbers, that is, $1/K+1/L=1$. By [Young's inequality](https://en.wikipedia.org/wiki/Young%27s_inequality_for_products), 
        
 $$
         f^{r-p}\leq\frac 1K+\frac 1L (f^{r-p})^L=\frac 1K+\frac 1Lf^{q-p}.
@@ -161,6 +181,31 @@ $$
         A_r^r\leq \eps^{p-r}A_p^p=A_p^{\alpha r}\cdot A_q^{(1-\alpha)r}.
 $$
 The theorem is thus proved.
+#remark
+A probably better way is to use the [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality){.text-cyan-800} directly. We can write the inequality we want to prove as
+$$
+\int f^r\leq\left(\int f^p\right)^{\frac{q-r}{q-p}}\cdot \left(\int f^q\right)^{\frac{r-p}{q-p}}
+=\left(\int f^p\right)^{1/K}\cdot \left(\int f^q\right)^{1/L}.
+$$
+Then since 
+$$
+\frac{p}{K}+\frac{q}{L}=r,
+$$
+the inequality follows. 
+
+However, our method actually *proves* the Hölder's inequality. Let $f,g$ be two nonnegative functions. By Young's inequality, we know that 
+$$
+fg\leq \frac 1p f^p+\frac 1q f^q.
+$$
+it follows that 
+$$
+\int fg\leq \frac 1p \int f^p+\frac 1q \int f^q.
+$$
+Replacing $f$ by $\eps f$ and $g$ by $\eps^{-1} g$, we get
+$$
+\int fg\leq \frac{\eps^p}p \int f^p+\frac{\eps^{-q}}q \int f^q.
+$$
+The Hölder's inequality is obtained by minimizing the above right side with respect to $\eps$. 
 ::
 
  
@@ -188,17 +233,17 @@ $$
         \int_0^1|g|^q dx=\int_0^1|f|^p dx<\infty. 
 $$ 
 Using $g$ as a test function, we have
-$$\int_0^1|f|^p
-            dx=\lim_{n\to\infty}\int_0^1 f_n f|f|^{p-2} dx. 
+$$
+\int_0^1|f|^p dx=\lim_{n\to\infty}\int_0^1 f_n f|f|^{p-2} dx. 
 $$
  Using Holder inequality, we have 
- $$ \int_0^1 f_n
+$$
+ \int_0^1 f_n
             f|f|^{p-2} dx\leq \|f_n\|_{L^p([0,1])}\cdot
             \|f|f|^{p-2}\|_{L^q([0,1])}=\|f_n\|_{L^p([0,1])}\cdot\|f\|_{L^p([0,1])}^{p/q}. 
-$$ 
-Combining with the weak
-            convergence, we obtain part (a). <br><br>
+$$
+We obtain part (a) by combining the above two expressions. <br><br>
 
 Let $p=2$ and $f_n=\sin nx$. Then $f_n$ is weakly convergent to $0$ by the
-           [Riemann-Lebesgue Lemma](https://en.wikipedia.org/wiki/Riemann–Lebesgue_lemma), providing strict inequality in part (a).
+           [Riemann-Lebesgue lemma](https://en.wikipedia.org/wiki/Riemann–Lebesgue_lemma), providing strict inequality in part (a).
 ::

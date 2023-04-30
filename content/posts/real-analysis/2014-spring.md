@@ -19,10 +19,12 @@ $$
 $$
 Since
 $$
-                \sum_{k<2^n} \lambda((a-1,b+1)\cap B_{k,n})\leq \lambda ((a-1,b+1))=b-a+2,
+                \sum_{k<2^n} \lambda((a-1,b+1)\cap B_{k,n})=
+                \lambda((a-1,b+1)\cap \bigcup_{k<2^n}B_{k,n})
+                \leq \lambda ((a-1,b+1))=b-a+2,
 $$ 
 we get a 
-                contradiction. This is because 
+                contradiction, because 
                      the left side of the above is no less than infinitely many sum of the same positive number
                     $\lambda((a,b)\cap A)$.
 ::
@@ -71,7 +73,7 @@ $$
 for all $x\in (a,b)$.
 
 #proof
-Using Hölder's Inequality, we have  
+Using [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality), we have  
 $$
                         |F(x+h)-F(x)|=\left|\int_x^{x+h} f(t) dt\right|\leq \left(\int_x^{x+h}|f(t)|^4
                         dt\right)^{1/4}\cdot \left(\int_x^{x+h} dt\right)^{3/4}.
@@ -80,7 +82,7 @@ Thus we have
 $$
                         \frac{|F(x+h)-F(x)|}{h^{3/4}}
                         \leq \left(\int_x^{x+h}|f(t)|^4
-                        dt\right)^{1/4}=\left(\int_a^b|f(t)|^4\,I_{[x,x+h](t)}
+                        dt\right)^{1/4}=\left(\int_a^b|f(t)|^4\,I_{[x,x+h]}(t)
                         dt\right)^{1/4},
 $$
 where $I_{[x,x+h]}(t)$ is the characteristic function of the interval $[x,x+h]$ which is $1$ on
@@ -89,7 +91,7 @@ Since for fixed $x$, we have
 $$
                         \lim_{h\to 0^+} |f(t)|^4\,I_{[x,x+h]}(t)=0
 $$
-almost everywhere, by the [Lebesgue's Dominated Convergence Theorem](en.wikipedia.org/wiki/Dominated_convergence_theorem), we get
+almost everywhere, by the [Lebesgue's dominated convergence theorem](en.wikipedia.org/wiki/Dominated_convergence_theorem), we get
 $$
                         \lim_{h\to 0^+} \frac{F(x+h)-F(x)}{h^{3/4}}=0.
 $$
@@ -111,7 +113,7 @@ Let $h$ be a small number, we then have
 $$
                         A(x+h)=\int_\R f(x+h-y) g(y) dy=\int_\R f(x-y)g(y+h) dy
 $$
-by change of variable. Thus we have
+by changing of variable. Thus we have
 $$
                         |A(x+h)-A(x)|\leq \int_\R |f(x-y)|g(y+h)-g(y)|dy.
 $$
@@ -132,7 +134,7 @@ It remains to prove that
 $$
                         \lim_{h\to 0} \int_\R|g(y+h)-g(y)|^2 dy=0.
 $$
-For any $\eps>0$, there exists an smooth function $\varphi(t)\in\mathcal C_0^\infty$ 
+For any $\eps>0$, there exists an smooth function $\varphi(t)\in\mathcal C_0^\infty(\R)$ 
                         such that
 $$
                         \int_\R|g(y)-\varphi(y)|^2 dy<\eps. 
@@ -141,14 +143,14 @@ For any $h$, we shall also have
 $$
                             \int_\R|g(y+h)-\varphi(y+h)|^2 dy<\eps
 $$ 
-by the  change variable formula. Since $\varphi$ is a
+by the  change of variable formula. Since $\varphi$ is a
                             smooth function with compact support, its derivative is bounded by a constant $C$. 
                             Assume
                             that the support of $\varphi$ is contained in $[-R,R]$.
                              If we choose $h$ small enough, we
-                            have $$ \int_\R |\varphi(t+h)-\varphi(t)|^2 dt\leq CRh^2.$$ 
+                            have $$ \int_\R |\varphi(t+h)-\varphi(t)|^2 dt\leq C^2Rh^2.$$ 
                             By triangle inequality, we have
-                            $$ \int_\R|g(y+h)-g(y)|^2 dy\leq 6\eps+3CRh^2$$ 
+                            $$ \int_\R|g(y+h)-g(y)|^2 dy\leq 6\eps+3C^2Rh^2$$ 
                         and this proves the continuity of $A(x)$.
                     
 To prove that $A(x)$ tends to $0$ at infinity, we assume that $\eps>0$ be a small number. 
@@ -173,7 +175,7 @@ we have
 $$
                     \left|\int_{|y|> R} f(x-y)g(y) dy\right|\leq C\sqrt\eps.
 $$
-Similarly, we get the estimate of the first term by the following coversion:
+Similarly, we get the estimate of the first term by the following conversion:
 $$
                     \left|\int_{|y|\leq R} f(x-y)g(y) dy\right|\leq \left|\int_{|x-y|>R} f(x-y)g(y) dy\right|.
 $$
@@ -181,7 +183,7 @@ $$
 
 ::ProblemBlock{number=5}
 #problem
- Is it possible for a continuous function $f: [0,1]\to\mathbb R $ to
+ Is it possible for a continuous function $f: [0,1]\to\mathbb R $ to have
 
 (a). Infinitely many strict local minima?
 
@@ -207,9 +209,9 @@ Then
 $$
                                     \bigcup_{n=1}^\infty M_n=M.
 $$
-If $M$ is uncountable, then at lease on of $M_n$ must be uncountable, and hence
+If $M$ is uncountable, then at lease one of $M_n$ must be uncountable, and hence
                                     infinite on some closed interval $[p,q]$. However, since for any
-$a_1,a_2\in M_n$, we must have $|a_1-a_2|>1/n$, the number must be finite, this is a contradiction.
+$a_1,a_2\in M_n$, we must have $|a_1-a_2|>1/n$, the number must be finite. This is a contradiction.
 ::
 
 ::ProblemBlock{number=6}
@@ -251,6 +253,6 @@ $$
 \sup_{f\in A}\int_X fgd\mu\leq \frac 12 ({\rm ess}\,\sup g-{\rm ess}\,\inf g).
 $$
 
-To prove that the above  inequality is actually an equalty, we just need to let $f$ be Dirac delta functions 
-on the maxiumal  and minimal points. 
+To prove that the above  inequality is actually an equality, we just need to let $f$ be Dirac delta functions 
+on the maximal  and minimal points. 
 ::

@@ -14,7 +14,7 @@
       <hr class="mt-1 mb-2 border-problem border rounded-full">
       <slot name="proof" />
     </div>
-    <div v-if="$slots.remark" class="text-problem">
+    <div v-if="$slots.remark" class="text-problem text-cyan-700">
       <h3 :id="`remark-${number}`" class="my-1 text-problem">
         Remark.
       </h3>
