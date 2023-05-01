@@ -7,3 +7,14 @@ body:
     role: Coordinator
     avatar: https://lu.math.uci.edu/favicon.webp
     url: https://lu.math.uci.edu
+  - name: Alessandra Pantano
+    role: Coordinator
+    url: https://www.math.uci.edu/~apantano/index.html
+  - name: Vladimir Baranovsky
+    role: Coordinator
+    url: https://www.math.uci.edu/~vbaranov/
+  - name: Manuel Reyes
+    role: Coordinator
+    url: https://www.math.uci.edu/~mreyes/
+  - name: Daniel Morrison
+    role: Student Associate
