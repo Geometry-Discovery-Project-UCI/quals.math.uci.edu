@@ -164,7 +164,7 @@ $$
 Taking integration on both sides, we get
 
 $$
-A_r^r \leq \frac{\eps^{p-r}}{K} A_p^p + \frac{\eps^{q-r}}{L} A_q^q, \qquad\qquad\qquad\qquad \qquad\qquad(1)
+A_r^r \leq \frac{\eps^{p-r}}{K} A_p^p + \frac{\eps^{q-r}}{L} A_q^q, \tag{1}
 $$
 
 where $A_s=\|f\|_s$. In order to get the optimal $\eps$, we take the derivative of the above right side
@@ -182,7 +182,7 @@ $$
 $$
 The theorem is thus proved.
 #remark
-A probably better way is to use the [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality){.text-cyan-800} directly. We can write the inequality we want to prove as
+A probably better way is to use the [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality){.text-cyan-700} directly. We can write the inequality we want to prove as
 $$
 \int f^r\leq\left(\int f^p\right)^{\frac{q-r}{q-p}}\cdot \left(\int f^q\right)^{\frac{r-p}{q-p}}
 =\left(\int f^p\right)^{1/K}\cdot \left(\int f^q\right)^{1/L}.

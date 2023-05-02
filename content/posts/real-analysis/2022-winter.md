@@ -10,8 +10,8 @@ $$
 Before embarking on the proof, state the definition of TV (total variation).
 
 #proof
-Let $\mathcal S=\{-1 < x_0 < x_1 < \cdots < x_r=1\}$ be a sequence of $r$ numbers in $[-1,1]$.
-        Define the total variation to be
+Let $\mathcal S=\{-1 = x_0 < x_1 < \cdots < x_r=1\}$ be a sequence of $(r+1)$ numbers in $[-1,1]$.
+        Define the total variation of $f$ to be
 $$
 TV(f)=\sup_r\sup_{\mathcal S}\, \sum_{j=1}^r|f(x_j)-f(x_{j-1})|.
 $$
@@ -20,7 +20,7 @@ $$
         \sum_{j=1}^r|f(x_j)-f(x_{j-1})|=\lim_{n\to\infty} \sum_{j=1}^r|f_n(x_j)-f_n(x_{j-1})|
         \leq\liminf_{n\to\infty} TV(f_n).
 $$
-Taking supremium of the left side above, we get the conclusion. 
+Taking supremium of the left side above, we get the conclusion. ghg
 ::
 
 ::ProblemBlock{number=2}
@@ -30,23 +30,28 @@ Let $\mu$ and $\nu$ be two positive measures on a measurable space $(X, \mathcal
 #proof
 For any $j$, we can find $E_j$ such that $\mu(E_j)<1/j^2$ and $\nu(E^c)<1/j^2$. Let
  $$
- E=\bigcup_{j=1}^\infty\bigcap_{k >  j} E_k.
+ E=\bigcup_{j=1}^\infty\bigcap_{k \geq  j} E_k.
  $$
  By definition, we have 
 $$
- \mu(\bigcap_{k >  j} E_k)\leq \mu(E_k)\leq \frac{1}{k^2}\to 0.
+ \mu(\bigcap_{k \geq   j} E_k)\leq \mu(E_k)\leq \frac{1}{k^2}\to 0
 $$     
-Thus 
+for any $k\geq j$, and 
+thus 
 $$
-\mu(\bigcup_{j=1}^\infty\bigcap_{k >  j} E_k)\leq\sum_{j=1}^\infty  \mu(\bigcap_{k >  j} E_k)=0.
+ \mu(\bigcap_{k \geq   j} E_k)=0.
+$$
+As a result, we have 
+$$
+\mu(\bigcup_{j=1}^\infty\bigcap_{k \geq   j} E_k)\leq\sum_{j=1}^\infty  \mu(\bigcap_{k \geq  j} E_k)=0.
 $$
 On the the hand, we consider 
 $$
-E^c= \bigcap_{j=1}^\infty\bigcup_{k >  j} E_k^c.
+E^c= \bigcap_{j=1}^\infty\bigcup_{k \geq  j} E_k^c.
 $$
 We have 
 $$
-\nu(\bigcup_{k >  j} E_k)\leq\sum_{k=j+1}^\infty\frac{1}{k^2} \leq\frac 1j.
+\nu(\bigcup_{k \geq   j} E_k)\leq\sum_{k=j}^\infty\frac{1}{k^2} \leq\frac 1{j-1}.
 $$
 Thus $\nu(E^c)=0$. This completes the proof. 
 ::
@@ -61,17 +66,21 @@ $$
 
 #proof
 This problem is very similar to [Problem 1 of 2023 
-    Spring Real Analysis Exam](/posts/real-analysis/2023-spring/)
+    Winter Real Analysis Exam](/posts/real-analysis/2023-winter/)
   and   [Problem 6 of 2022 
     Fall  Real Analysis Exam](/posts/real-analysis/2022-fall/). Let 
 $$
- f(x)=\sum_{j=1}^n 1_{E_j}. 
+ f(x)=\sum_{j=1}^n 1_{E_j},
 $$
-Then $f$ is a positive integer valued function. If $f(x)\leq n$ almost everywhere, we have 
+where $1_{E_j}$ is the characteristic function of $E_j$.
+Then $f$ is a positive integer valued function. We have 
 $$
-n-1\geq\int_X f(x)d\mu  =\sum_{j=1}^n \mu(E_j)>n-1,
+\int_X f(x)d\mu  =\sum_{j=1}^n \mu(E_j)>n-1.
 $$
-a contradiction. Thus $f(x)\geq n$ on a set with  positive measure, which implies the theorem. 
+Thus there is a point $x_0$ such that $f(x_0)>n-1$. Obviously
+$$
+\bigcap_{j=1}^nE_j\supset \{x_0\}\neq\emptyset.
+$$
 ::
 
 ::ProblemBlock{number=4}
@@ -86,25 +95,17 @@ Prove that
 $$
            \lim_{n\to\infty}\int_{E_n} f d\mu=0.
 $$
-Let $(X,\mathcal M, \mu)$ be a measure space, and let $f\in L^1(X,\mathcal M,\mu)$. 
-           Let $(E_n)_{n\in\mathbb N}$ be a sequence
-           of $\mathcal M$-measureable sets such that 
-$$
-           \lim_{n\to\infty}\mu(E_n)=0.
-$$
-Prove that 
-$$
-           \lim_{n\to\infty}\int_{E_n} f d\mu=0.
-$$
+ 
 
 #proof
+We can write $f=f^+-f^-$ so it suffices to prove the theorem assuming that $f$ is nonnegative. 
  We observe that 
 $$
  \int_{E_n} f d\mu=\int_X 1_{E_n} fd\mu.
 $$
  The sequence of functions $(1-1_{E_n}) f\to f$ almost everywhere by the assumption of the 
  measures of $E_n$. Then by 
-  [Fatou's Lemma](https://en.wikipedia.org/wiki/Fatou%27s_lemma), we have
+  [Fatou's lemma](https://en.wikipedia.org/wiki/Fatou%27s_lemma), we have
  $$
 \int_X fd\mu\leq\liminf_{n\to\infty}\int_X(1-1_{E_n}) fd\mu=\int_X fd\mu-\limsup_{n\to\infty}
  \int_{E_n} fd\mu.
@@ -141,9 +142,10 @@ $$
 #proof
 For any $\eps>0$, there exists an $N$ such that 
 $$
-        \int_N^n|f(x)| dx<\eps.
+        \int_N^n|f(x)| dx<\eps
 $$
-For such a fixed $N$, we let $n$ large enough, we have 
+for $n>N$.
+For such a fixed $N$, we let $n$ large enough so that 
 $$
 \frac 1n\int_0^N x|f(x)| dx<\eps.
 $$

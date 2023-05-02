@@ -20,7 +20,8 @@ export default defineNuxtConfig({
               eps: '{\\varepsilon}',
               Q: '{\\mathbb{Q}}',
               R: '{\\mathbb{R}}',
-              C: '{\\mathbb{C}}'
+              C: '{\\mathbb{C}}',
+              N: '{\\mathbb{N}}'
             }
           }
         }]
