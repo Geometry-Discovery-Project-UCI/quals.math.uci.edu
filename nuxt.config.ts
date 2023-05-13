@@ -22,7 +22,8 @@ export default defineNuxtConfig({
               R: '{\\mathbb{R}}',
               C: '{\\mathbb{C}}',
               Z: '{\\mathbb{Z}}',
-              F: '{\\mathbb{F}}'
+              F: '{\\mathbb{F}}',
+              N: '{\\mathbb{N}}'
             }
           }
         }]

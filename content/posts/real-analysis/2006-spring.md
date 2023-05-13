@@ -15,7 +15,7 @@ See [Problem 5 of 2023 Winter Real Analysis Exam](/posts/real-analysis/2023-spri
 Let $\mathcal M$ be a Lebesgue measurable sets on the real line. Consider two measures on $\mathcal M$: Lebesgue measure $m$ and the counting measure $\tau$, where for $A\in\mathcal M$ we set $\tau(A)$ to be the number of points in $A$. Show that $m$ is absolutely continuous with respect to $\tau$, but that $\dfrac{dm}{d\tau}$ doesn't exist, i.e., there is no measureable function $h$ such that $m(A)=\int_A hd\tau$ for all $A\in\mathcal M$. Does this contradict to the Radon-Nikodym Theorem?
 
 #proof
-See [Radon-Nikodym Theorem on Wikipedia](https://en.wikipedia.org/wiki/Radon–Nikodym_theorem). The Radon-Nikodym derivative doesn't exist because:
+See [Radon-Nikodym theorem](https://en.wikipedia.org/wiki/Radon–Nikodym_theorem). The Radon-Nikodym derivative doesn't exist because:
 
 1. $m$, $\tau$ live in two different $\sigma$-algebra;
 2. $\tau$ is not $\sigma$-finite.

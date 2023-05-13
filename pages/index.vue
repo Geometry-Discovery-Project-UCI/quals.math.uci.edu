@@ -27,6 +27,8 @@
 </template>
 
 <script setup lang="ts">
+import { compareQuarters } from '~/utils'
+
 const posts = await queryContent('/posts').only(['_path', '_dir', 'draft']).find()
 
 // Map<type, [{title, path}]>
@@ -61,7 +63,7 @@ function sortPosts (a: Post, b: Post) {
     return parseInt(bYear) - parseInt(aYear)
   }
 
-  return aQuarter.localeCompare(bQuarter)
+  return compareQuarters(aQuarter, bQuarter)
 }
 
 useHead({
