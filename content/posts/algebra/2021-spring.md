@@ -199,6 +199,8 @@ $$
 $$
 
 #proof
+__Solution 1:__
+
 The tensor product is a $\Z$-module, a finite abelian group. Since 1 is a generator for $\Z/n\Z$ and 1 is a generator for $\Z/m\Z$, we see that $1\otimes 1$ is a generating set for $\Z/n\Z\otimes_\Z \Z/m\Z$. So this tensor product is a cyclic group.
 
 We now show that the order of this group divides $d$. We have
@@ -224,5 +226,8 @@ $$
 aB(x_1,y)+B(x_2,y) = ax_1y\mod d + x_2y\mod d
 $$
 
+__Solution 2:__
+
+If $M$ is an $R$-module, we always have $M\otimes_R(R/I) \cong M/IM$, so it suffices to show that the principal ideal $(m)$ in $\Z/n\Z$ is equal to the principal ideal $(d)$. Since $d|m$, the inclusion $(m)\subseteq (d)$ is clear. For the converse direction, notice that $am+bn=d$ for some integers $a,b$, so $(d)\subseteq (m)$.
 
 ::
