@@ -96,7 +96,15 @@ Let $L/\Q$ denote a Galois extension with Galois group isomorphic to $A_4$.
 Let $A:V\to V$ be a linear transformation of a vector space $V$ over the field $\Q$ which satisfies the relation $(A^3+3I)(A^3-2I)=0$. Show that the dimension $\dim_\Q(V)$ is divisible by 3.
 
 #proof
+We assume $V$ is finite dimensional. 
 
+We consider the subspaces $V_1={\rm Ker}(A^3+3I)$. Let $V_2=V/V_2$. Since $V_1, V_2$ and $V$ are vector spaces, we must have 
+$$
+V=V_1\oplus V_2.
+$$
+By assumption, $V_2={\rm Im}(A^3+3I)={\rm Ker}(A^3-2I)$. We shall prove that both dimensions of $V_1$ and $V-2$ are divisible by $3$.
+
+Let $\mathscr B=\{x_1,\cdots, x_n\}$ be a basis of $V_1$. Since $Ax_1$ is not linear dependent to $x_1$, we can find an $2\leq i\leq n$ such that replacing $x_i$ by $Ax_1$, the set $\mathscr B$ is still a basis of $V_1$. Similarly, since $x^3+3=0$ has no rational solution, $A^2x_1$ can not be represented by a linear combination of $x_1$ and $Ax_1$. This we canb replacing some of $x_j$ ($j\neq 1, i$) with $A^2x_1$ and the set $\mathscr B$ is still a basis. By induction, we shall find a basis of $V_1$ so that the basis can be given by $\mathscr B=\{x_1, Ax_1, A^2 x_1, x_2, Ax_2, A^2 x_2,\cdots, x_r, Ax_r, A^2 x_r\}$, and hence $n=3r$.
 ::
 
 ::ProblemBlock{number=8}
@@ -110,11 +118,11 @@ True/False/ For each of the following answer True or False and give a __brief__ 
 (c) Let $n$ be a positive integer. Then $\Z/n\Z\otimes_\Z \mathbb{Q}=0$.
 
 #proof
-(a) This is true since $\ker\varphi$ is an ideal of $K_1$ so it is 0 or all of $K_1$.
+(a) This is true -- since $\ker\varphi$ is an ideal of $K_1$ so it is 0 or all of $K_1$.
 
-(b) This is false- the additive group is never isomorphic to its multiplicative group. Alternatively, these groups have different number of elements of order 2.
+(b) This is false -- the additive group is never isomorphic to its multiplicative group. Alternatively, these groups have different number of elements of order 2.
 
-(c) 
+(c) This is true -- we have $[a]\otimes \frac nq=n[a]\otimes \frac 1q=0$.
 
 ::
 
