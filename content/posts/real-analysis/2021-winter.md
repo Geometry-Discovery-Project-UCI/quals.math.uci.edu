@@ -113,22 +113,28 @@ $$
 Show that $f(x)$ is a real-valued measurable function.
 
 #proof
-We write $\R=\{g(x)=0\}\cup \{g(x)\neq 0\}+E_1\cup E_2$. Then on $E_1$, $f(x)=0$ if $0\in O$ and $f(x)=\infty$ if $0\not\in O$. In either case, $f(x)$ is measurable.
+We write $\R=\{g(x)=0\}\cup \{g(x)\neq 0\}=E_1\cup E_2$. Then on $E_1$, $f(x)=0$ if $0\in O$ and $f(x)=\infty$ if $0\not\in O$. In either case, $f(x)$ is measurable on $E_1$.
 
-Now we assume that $g(x)\neq 0$. Write
+We then only need to prove that $f(x)$ is measurable on $E_2$. If $0\in O$, then $f(x)=0$ and is measurable. So for the rest of the proof, we assume that $0\not\in O$.
+ Write
 $$
 O=\bigcup_{j=1}^\infty (a_{2j}, a_{2j+1})
 $$
 as disjoint union of open intervals. Then 
 $$
-f(x)=\inf_{j\in \N}\inf \{t\geq 0\mid h(t)=a_j\}.
+f(x)=\inf_{j\in \N}\inf \{t\geq 0\mid h(t)=a_j/g(x)\}.
 $$
-so it suffice to prove that 
+So it suffices to prove that 
 $$
-r(x)=\inf \{t\geq 0\mid h(t)=x\}
+r(x)=r_j(x)=\inf \{t\geq 0\mid h(t)=a_j/g(x)\}
 $$
-is a measurable function. Assume at $r(x)$, $h'\neq 0$, then by Implicit function theorem, $r(x)$ is smooth, and hence 
-measurable. If $h'(r(x))=0$, then by the graph of the function $h(t)$, we know that $h''(r(x))\neq 0$. Thus locally $h(t)=y$ is a quadratic equation. The solution formula for a quadratic equation is a measurable function. This completes the proof.
+is a measurable function. 
+
+Let $b_0=0$ and $b_j>0$ be a sequence of real numbers such that on $(b_{2j}, b_{2j+1})$ $h(t)$ is increasing and on 
+$(b_{2j+1}, b_{2j+2})$ $h(t)$ is decreasing. Let 
+$p_{ji}(x)=a_j/g(x)\cdot 1_{(b_i,b_{i+1})}$ for all $i\geq 0$. Note that $a_j/g(x)$ is never zero. Define
+$r_{ji}(x)=\infty$ if $h(t)=p_{ji}(x)$ has no solution and $r_{ji}(x)=t$ if $h(t)=p_{ji}(x)$. Then $r_{ji}(x)$ are measurable functions. Since $r_j(x)=\inf_{i} r_{ji}(x)$, it must be measurable. 
+ This completes the proof.
 ::
 
 ::ProblemBlock{number=6}
