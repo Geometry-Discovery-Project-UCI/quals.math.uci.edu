@@ -1,7 +1,7 @@
 const quarters: {[key: string]: number} = {
   fall: 1,
-  winter: 2,
-  spring: 3
+  spring: 2,
+  winter: 3
 }
 
 export function compareQuarters (a: string, b: string) {
