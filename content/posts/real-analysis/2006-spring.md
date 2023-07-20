@@ -5,7 +5,7 @@
 Let $f\in L^p\cap L^q$ with $1\leq p < q\leq\infty$. Prove that $f\in L^r$ for all $p < r < q$.
 
 #proof
-See [Problem 5 of 2023 Winter Real Analysis Exam](/posts/real-analysis/2023-spring/).
+See [Problem 5 of 2023 Winter Real Analysis Exam](/posts/real-analysis/2023-winter/).
 
 
 ::
