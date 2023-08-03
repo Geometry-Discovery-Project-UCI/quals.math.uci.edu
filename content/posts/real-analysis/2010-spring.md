@@ -61,18 +61,18 @@ We claim that
 $$\max_{0\leq k\leq 2^n-1} 
     \int_{k/2^n}^{(k+1)/2^n}|g(s)| ds\to 0
 $$
-as $n\to\infty$. If not, then there an $\\eps_0>0$ such that we can find sequences $(k_j, n_j)$ such that 
+as $n\to\infty$. If not, then there an $\eps_0>0$ such that we can find sequences $(k_j, n_j)$ such that 
 $$
 \int_{a_j}^{b_j}|g(s)| ds\geq\eps_0,
 $$
-where $a_j=k_j/2^{n_j}$ and $b_j=(k_j+1)/2^{n_j}$.
+where $a_j=k_j/2^{n_j}$ and $b_j=(k_j+1)/2^{n_j}$. By the construction of the closed intervals $[a_j, b_j]$, we know that either one contains the other, or two of them intersect at most at one point. 
 Since $g$ is integrable, we can find an interval $[a_{j_1}, b_{j_1}]$ such that it contains infinitely many intervals of the form $[a_j, b_j]$. Inductively, we are able to find a subsequence such that
 $$
 [a_{j_1}, b_{j_1}]\supset\cdots\supset [a_{j_r}, b_{j_r}]\supset\cdots.
 $$
 By the [Dominated convergence theorem](https://en.wikipedia.org/wiki/Dominated_convergence_theorem), we have 
 $$
-\lim_{r\to\infty} \int_{a_r}^{b_r}|g(s)| ds=0,
+\lim_{r\to\infty} \int_{a_{j_r}}^{b_{j_r}}|g(s)| ds=0,
 $$
 a contradiction. 
 ::
