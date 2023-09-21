@@ -1,4 +1,7 @@
 body:
+  - name: Isaac Goldbring
+    role: Coordinator
+    url: https://www.math.uci.edu/~isaac/
   - name: Kiyoshi Guo
     role: Developer
     avatar: https://avatars.githubusercontent.com/u/44930252?v=4
@@ -7,6 +10,9 @@ body:
     role: Coordinator
     avatar: https://lu.math.uci.edu/favicon.webp
     url: https://lu.math.uci.edu
+  - name: Connor Mooney
+    role: Coordinator
+    url: https://www.math.uci.edu/~mooneycr/
   - name: Alessandra Pantano
     role: Coordinator
     url: https://www.math.uci.edu/~apantano/index.html
