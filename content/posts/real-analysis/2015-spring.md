@@ -58,11 +58,16 @@ Show that $\lim_{x\to 0^+} f(x)$ exists.
 #proof
 Let $0<x_1<x_2<1$. Then by [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality), we have
 $$
-|f(x_1)-f(x_2)|=\left|\int_{x_1}^{x_2} f'(x) dx\right|=\left|\int_{x_1}^{x_2} x^{1/p}f'(x) \cdot x^{1/q} dx\right|\leq \left(\int_{x_1}^{x_2} x|f'(x)|^p dx\right)^{1/p}\cdot
-\left(\int_{x_1}^{x_2} dx\right)^{1/q}\leq C|x_2-x_1|^{1/q}
+|f(x_1)-f(x_2)|=\left|\int_{x_1}^{x_2} f'(x) dx\right|=\left|\int_{x_1}^{x_2} x^{1/p}f'(x) \cdot x^{-1/p} dx\right|\leq \left(\int_{x_1}^{x_2} x|f'(x)|^p dx\right)^{1/p}\cdot
+\left(\int_{x_1}^{x_2} x^{-q/p}dx\right)^{1/q}
 $$
 where $q=p/(p-1)$.
-Thus $\lim_{x\to 0^+} f(x)$ exists.
+Since
+$$
+\int_{x_1}^{x_2} x^{-q/p}dx=\int_{x_1}^{x_2} x^{-1/(p-1)}dx=\frac{p-1}{p-2}(x_2^{\frac{ p-2}{  p-1}}- x_1^{\frac{ p-2}{  p-1}})\to 0
+$$
+as $x_1,x_2\to 0$, 
+$\lim_{x\to 0^+} f(x)$ exists by the Cahchy criterion.
 ::
 
 ::ProblemBlock{number=4}
@@ -141,19 +146,25 @@ We claim that
 $$
 \sum_{j=1}^\infty \frac{1}{n_j}=\alpha.
 $$
-In order to prove the claim, we notice that by construction of $\{n_k\}$, for each $k$, we either have $n_{k-1}=n_k-1$, or 
-$$
-\frac{1}{n_k-1}\geq\alpha-\sum_{j=1}^{k-1}\frac{1}{n_j}.\tag{2}
-$$
-Since the harmonic series $\sum\frac 1k$ is divergent, $n_{k-1}=n_k-1$ is not true for all sufficient large $k$. As a result, we shall find a subsequence $\{n_{k_j}\}$ such that 
-$$
-n_{k_j}>n _{k_j-1}+1.
-$$
-Let 
+If not, then 
 $$
 \beta=\alpha -\sum_{j=1}^\infty \frac{1}{n_j}>0.
 $$
-Then we  have a contradiction since (2) is not valid for sufficiently large $k_j$.
+
+In order to prove the claim, we notice that by construction of $\{n_k\}$, for each $k$, we either have $n_{k}=n_{k-1}+1$, or 
+$$
+\frac{1}{n_k+1}\geq\alpha-\sum_{j=1}^{k-1}\frac{1}{n_j}.\tag{2}
+$$
+Since the harmonic series $\sum\frac 1k$ is divergent, $n_{k}=n_{k-1}+1$ is not true for all sufficient large $k$. As a result, we shall find a subsequence $\{n_{k_j}\}$ such that 
+$$
+n_{k_j+1}>n _{k_j}+1,
+$$
+and 
+$$
+\frac{1}{n_{k_j}+1}\geq\alpha-\sum_{j=1}^{k-1}\frac{1}{n_j}\geq \alpha-\sum_{j=1}^{\infty}\frac{1}{n_j}=\beta.
+$$
+Thus $\beta=0$ and this is a contradiction. The claim is proved.
+ 
 
 By the claim, we have $E=E+\alpha$ for all $\alpha>0$. It is not hard to extend the same translation invariance to all real numbers $\alpha$. We   are then in the same situation as in the [Problem 5 of 2022 Winter Real Analysis Exam](/posts/real-analysis/2022-winter) and we can use the method there to complete the proof.
 ::

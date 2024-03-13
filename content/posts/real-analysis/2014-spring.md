@@ -234,7 +234,7 @@ $$
 
 #proof
 We writre 
-$F=f^+-f^-$ as the positive and negative part of $f$. Then we have
+$f=f^+-f^-$ as the positive and negative part of $f$. Then we have
 $$
 \int_X f^+d\mu+ \int_X f^-d\mu=1,\quad \int_X f^+d\mu- \int_X f^-d\mu=0.
 $$
@@ -253,6 +253,6 @@ $$
 \sup_{f\in A}\int_X fgd\mu\leq \frac 12 ({\rm ess}\,\sup g-{\rm ess}\,\inf g).
 $$
 
-To prove that the above  inequality is actually an equality, we just need to let $f$ be Dirac delta functions 
-on the maximal  and minimal points. 
+To prove that the above  inequality is actually an equality, we just need to let $f$ be (half) Dirac delta functions 
+on the maximal  and minimal points of $g$. 
 ::
