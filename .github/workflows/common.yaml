@@ -19,11 +19,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install ESLint
-        run: npm install
+        run: corepack enable && pnpm install
       - name: Build the Project
-        run: npm run build
+        run: pnpm run build
       - name: Run ESLint
-        run: npm run lint
+        run: pnpm run lint
 
   check_pr_title:
     name: Check PR Title
