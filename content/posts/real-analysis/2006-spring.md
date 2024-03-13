@@ -59,7 +59,7 @@ and this completes the proof.
 Let $f$ be a real-valued function of bounded variation on $[a,b]$. Suppose $f$ is absolutely continuous on $[a+\eta,b]$ for every $\eta\in (0,b-a)$. Show that $f$ is absolutely continuous on $[a,b]$.
 
 #proof
-We write $f$ as $f=f_1-f_2$, where $f_j$ ($j=1,2$) are monotonic increasign fuctions, and for any $\eta>0$, these two functions are absolutely continuous on $[a+\eta,b]$. Since in addtion, $f_j$ are continuous at $a$, the total variaton of the functions on $[a,a+\eta]$ would be small for small $\eta$. Thus $f_j$ are absolutely continuous on $[a,b]$.
+（This problem is wrong.)
 ::
 
 ::ProblemBlock{number=5}
@@ -94,5 +94,5 @@ $$
 Using [Fubini's Theorem](https://en.wikipedia.org/wiki/Fubini%27s_theorem), we have:
 
 $$
-\int_0^\infty b(t) dt=\int_0^\infty\int_X 1_{E_t}\,d\mu \, dt=\int_X \int_0^\infty 1_{E_t}d\mu\, dt=\int_X fd\mu.
+\int_0^\infty b(t) dt=\int_0^\infty\int_X 1_{E_t}\,d\mu \, dt=\int_X \int_0^\infty 1_{E_t}dt\,d\mu=\int_X fd\mu.
 ::
