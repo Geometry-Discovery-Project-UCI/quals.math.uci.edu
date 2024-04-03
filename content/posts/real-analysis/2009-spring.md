@@ -47,15 +47,15 @@ $$
 On the other hand, since $h$ is smooth with compact support, it must be uniformly continuous. Thus for $n$ 
 large enough, we must have 
 $$
-\left|\int_{y-1/n}^{y+1/n} g(x) dx-g(x)\right|<\eps/N,
+\left|\frac n2\int_{y-1/n}^{y+1/n} h(x) dx-h(x)\right|<\eps/N,
 $$
 where  ${\rm supp}\, h\subset [-N,N]$. Then 
 $$
-\int_\R\left|\frac n2\int_{y-1/n}^{y+1/n} h(x) dx-h(y)\right|dy\leq eps.
+\int_\R\left|\frac n2\int_{y-1/n}^{y+1/n} h(x) dx-h(y)\right|dy\leq 2\eps.
 $$
 Using triangle inequality, we have 
 $$
-\int_\R\left|\frac n2\int_{y-1/n}^{y+1/n} g(x) dx-g(y)\right|dy\leq 3\eps
+\int_\R\left|\frac n2\int_{y-1/n}^{y+1/n} g(x) dx-g(y)\right|dy\leq 4\eps
 $$
 for $n\gg 0$. 
 ::
