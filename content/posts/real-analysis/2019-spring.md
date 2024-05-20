@@ -142,7 +142,8 @@ $$
 $$
 Since $|g|\leq 1$, by combining the above, we get 
 $$
-\left|\int_\R h(x) g(x\sqrt t) dx\right|<2\eps
+\left|\int_\R f(x) g(x\sqrt t) dx\right|\leq\left|\int_\R h(x) g(x\sqrt t) dx\right|+
+\left|\int_\R |f(x)-h(x)| g(x\sqrt t) dx\right| <2\eps
 $$
 for $t\gg 0$, completing the proof.
 ::
