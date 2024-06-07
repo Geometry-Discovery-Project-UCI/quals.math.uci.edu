@@ -153,7 +153,7 @@ $$
 
 In order to prove the claim, we notice that by construction of $\{n_k\}$, for each $k$, we either have $n_{k}=n_{k-1}+1$, or 
 $$
-\frac{1}{n_k+1}\geq\alpha-\sum_{j=1}^{k-1}\frac{1}{n_j}.\tag{2}
+\frac{1}{n_{k-1}+1}\geq\alpha-\sum_{j=1}^{k-1}\frac{1}{n_j}.\tag{2}
 $$
 Since the harmonic series $\sum\frac 1k$ is divergent, $n_{k}=n_{k-1}+1$ is not true for all sufficient large $k$. As a result, we shall find a subsequence $\{n_{k_j}\}$ such that 
 $$
@@ -161,7 +161,7 @@ n_{k_j+1}>n _{k_j}+1,
 $$
 and 
 $$
-\frac{1}{n_{k_j}+1}\geq\alpha-\sum_{j=1}^{k-1}\frac{1}{n_j}\geq \alpha-\sum_{j=1}^{\infty}\frac{1}{n_j}=\beta.
+\frac{1}{n_{k_j}+1}\geq\alpha-\sum_{j=1}^{k_j}\frac{1}{n_j}\geq \alpha-\sum_{j=1}^{\infty}\frac{1}{n_j}=\beta.
 $$
 Thus $\beta=0$ and this is a contradiction. The claim is proved.
  
