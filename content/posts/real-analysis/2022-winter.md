@@ -77,9 +77,9 @@ Then $f$ is a positive integer valued function. We have
 $$
 \int_X f(x)d\mu  =\sum_{j=1}^n \mu(E_j)>n-1.
 $$
-Thus there is a point $x_0$ such that $f(x_0)>n-1$. Obviously
+Thus the measure $m(\{x\mid f(x)=n\})$ must be positive. Then obviously
 $$
-\bigcap_{j=1}^nE_j\supset \{x_0\}\neq\emptyset.
+\bigcap_{j=1}^nE_j\supset \{x\mid f(x)=n\}\neq\emptyset.
 $$
 ::
 
