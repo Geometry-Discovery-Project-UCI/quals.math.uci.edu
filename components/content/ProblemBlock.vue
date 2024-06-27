@@ -1,5 +1,5 @@
 <template>
-  <AppCard class="bg-amber-50 w-full">
+  <AppCard class="bg-amber-50 w-full problem-block">
     <div class="text-red-500">
       <h3 :id="`problem-${number}`" class="my-1 text-problem">
         Problem {{ number }}.

@@ -37,3 +37,9 @@ html {
     font-display: swap;
     src: url('/fonts/SF_Cartoonist_Hand/SF_Cartoonist_Hand_Bold.ttf') format('truetype');
 }
+
+.problem-block {
+    strong {
+        @apply text-inherit;
+    }
+}
