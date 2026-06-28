@@ -17,9 +17,9 @@ jobs:
       security-events: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install ESLint
-        run: corepack enable && pnpm install
+        run: corepack enable && pnpm install --frozen-lockfile
       - name: Build the Project
         run: pnpm run build
       - name: Run ESLint
@@ -29,7 +29,7 @@ jobs:
     name: Check PR Title
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Dependencies
         run: npm install @commitlint/config-conventional
       - uses: JulienKode/pull-request-name-linter-action@v0.5.0
