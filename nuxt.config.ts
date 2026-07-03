@@ -4,6 +4,11 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/content'
   ],
+  vue: {
+    compilerOptions: {
+      isCustomElement: tag => ['defs', 'g', 'mjx-container', 'path', 'use'].includes(tag.toLowerCase())
+    }
+  },
   app: {
     head: {
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.webp' }],

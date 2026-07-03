@@ -53,7 +53,7 @@ F:K\times K\to \mathbb{R},\qquad F(x,y)=d(x,y).
 $$
 The function $F$ is continuous. Indeed, for $(x,y),(x',y')\in K\times K$, the triangle inequality gives
 $$
-|d(x,y)-d(x',y')|\le d(x,x')+d(y,y').
+|d(x,y)-d(x',y')|\le |d(x,y)-d(x',y)|+|d(x',y)-d(x',y')|\le d(x,x')+d(y,y').
 $$
 Thus $F$ is continuous with respect to the product metric.
 
@@ -207,12 +207,12 @@ $$
 d(f,g)=\sup\{|f(x)-g(x)|:x\in [0,1]\}.
 $$
 
-(a) Prove that $(X,d)$ is complete.
+<span style="display:inline-block; width:1em;"></span> **(a)**  Prove that $(X,d)$ is complete.
 
-(b) Prove that $(X,d)$ is not compact.
+<span style="display:inline-block; width:1em;"></span> **(b)**  Prove that $(X,d)$ is not compact.
 
 #proof
-(a) Let $\{f_n\}$ be a Cauchy sequence in $(X,d)$. Then $\{f_n\}$ is Cauchy with respect to the supremum norm. Hence for each $x\in [0,1]$, the sequence $\{f_n(x)\}$ is Cauchy in $\mathbb{R}$. Since $\mathbb{R}$ is complete, the pointwise limit
+<span style="display:inline-block; width:1em;"></span> **(a)**   Let $\{f_n\}$ be a Cauchy sequence in $(X,d)$. Then $\{f_n\}$ is Cauchy with respect to the supremum norm. Hence for each $x\in [0,1]$, the sequence $\{f_n(x)\}$ is Cauchy in $\mathbb{R}$. Since $\mathbb{R}$ is complete, the pointwise limit
 $$
 f(x)=\lim_{n\to\infty}f_n(x)
 $$
@@ -238,7 +238,10 @@ f(x)\le f(y).
 $$
 Thus $f$ is nondecreasing, so $f\in X$. Therefore every Cauchy sequence in $X$ converges to an element of $X$, and $(X,d)$ is complete.
 
-(b) We construct a sequence in $X$ with no convergent subsequence. For $n\ge 2$, define
+<br>
+
+
+<span style="display:inline-block; width:1em;"></span> **(b)**   We construct a sequence in $X$ with no convergent subsequence. For $n\ge 2$, define
 $$
 f_n(x)=
 \begin{cases}
@@ -344,20 +347,20 @@ $$
 
 Prove the following.
 
-(a) If $f,g\in \mathcal{R}([a,b])$, then
+<span style="display:inline-block; width:1em;"></span> **(a)**   If $f,g\in \mathcal{R}([a,b])$, then
 $$
 \left|\int_a^b f(x)g(x)\,dx\right|
 \le
 \|f\|_2\|g\|_2.
 $$
 
-(b) If $f,g,h\in \mathcal{R}([a,b])$, then
+<span style="display:inline-block; width:1em;"></span> **(b)**   If $f,g,h\in \mathcal{R}([a,b])$, then
 $$
 \|f-h\|_2\le \|f-g\|_2+\|g-h\|_2.
 $$
 
 #proof
-(a) This is the Cauchy-Schwarz inequality for the Riemann integral. If $\|g\|_2=0$, then
+<span style="display:inline-block; width:1em;"></span> **(a)**  This is the Cauchy-Schwarz inequality for the Riemann integral. If $\|g\|_2=0$, then
 $$
 \int_a^b |g(x)|^2\,dx=0,
 $$
@@ -398,7 +401,7 @@ $$
 \|f\|_2\|g\|_2.
 $$
 
-(b) Let
+<span style="display:inline-block; width:1em;"></span> **(b)**   Let
 $$
 F=f-g,
 \qquad
@@ -408,7 +411,7 @@ Then
 $$
 f-h=F+G.
 $$
-Using part (a), we get
+Using part **(a)**, we get
 $$
 \begin{aligned}
 \|F+G\|_2^2
