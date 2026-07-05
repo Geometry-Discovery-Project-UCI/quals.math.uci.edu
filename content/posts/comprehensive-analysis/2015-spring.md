@@ -87,7 +87,7 @@ $$
 $$
 Thus
 $$
-\boxed{\lim_{n\to+\infty}\int_0^1 \sin(nx)e^{-x^2}\,dx=0.}
+ \lim_{n\to+\infty}\int_0^1 \sin(nx)e^{-x^2}\,dx=0.
 $$
 ::
 
@@ -258,7 +258,7 @@ $$
 $$
 Thus, with the standard outward boundary orientation,
 $$
-\boxed{\int_{\partial D}\frac{x^3}{3}\,dy\wedge dz+\sin(yz)\,dy\wedge dz+x^{10}\,dx\wedge dz=\frac{128\pi}{5}.}
+ \int_{\partial D}\frac{x^3}{3}\,dy\wedge dz+\sin(yz)\,dy\wedge dz+x^{10}\,dx\wedge dz=\frac{128\pi}{5}.
 $$
 ::
 
@@ -409,39 +409,78 @@ Let $(X,d)$ be a metric space and $E\subset X$ be a compact set. Prove that $E$ 
 #proof
 We prove that $X\setminus E$ is open.
 
-Let $x\in X\setminus E$. We claim that
-$$
-d(x,E):=\inf\{d(x,y):y\in E\}>0.
-$$
-Suppose instead that $d(x,E)=0$. Then for each $n\in\mathbb{N}$, there exists $y_n\in E$ such that
-$$
-d(x,y_n)<\frac{1}{n}.
-$$
-Since $E$ is compact, the sequence $\{y_n\}$ has a convergent subsequence $\{y_{n_k}\}$ with limit $y\in E$. But
-$$
-d(x,y)
-\le
- d(x,y_{n_k})+d(y_{n_k},y).
-$$
-Letting $k\to\infty$, we get
-$$
-d(x,y)=0.
-$$
-Therefore $x=y\in E$, contradicting $x\notin E$.
+If $E=\emptyset$, then $E$ is closed. So assume $E\neq\emptyset$.
 
-Hence $d(x,E)>0$. Let
-$$
-r=\frac{1}{2}d(x,E)>0.
-$$
-If $z\in B(x,r)$ and $z\in E$, then
-$$
-d(x,E)\le d(x,z)<r=\frac{1}{2}d(x,E),
-$$
-which is impossible. Thus
+Let $x\in X\setminus E$. We want to find $r>0$ such that
 $$
 B(x,r)\subset X\setminus E.
 $$
-Therefore $X\setminus E$ is open, so $E$ is closed.
+
+For each $y\in E$, since $x\neq y$, we have
+$$
+d(x,y)>0.
+$$
+Let
+$$
+r_y=\frac{1}{2}d(x,y)>0.
+$$
+Then the collection
+$$
+{B(y,r_y)\in E}
+$$
+is an open cover of $E$.
+
+Since $E$ is compact, there exist finitely many points $y_1,\dots,y_m\in E$ such that
+$$
+E\subset \bigcup_{j=1}^m B(y_j,r_{y_j}).
+$$
+
+Now define
+$$
+r=\min_{1\le j\le m} r_{y_j}.
+$$
+Since this is the minimum of finitely many positive numbers, we have
+$$
+r>0.
+$$
+
+We claim that
+$$
+B(x,r)\cap E=\emptyset.
+$$
+
+Suppose not. Then there exists $z\in B(x,r)\cap E$. Since $z\in E$, there is some $j$ such that
+$$
+z\in B(y_j,r_{y_j}).
+$$
+Thus
+$$
+d(z,y_j)<r_{y_j}.
+$$
+Also, since $z\in B(x,r)$ and $r\le r_{y_j}$, we have
+$$
+d(x,z)<r\le r_{y_j}.
+$$
+Therefore, by the triangle inequality,
+$$
+d(x,y_j)
+\le d(x,z)+d(z,y_j)
+< r_{y_j}+r_{y_j}
+=2r_{y_j}
+=d(x,y_j),
+$$
+which is impossible.
+
+Hence
+$$
+B(x,r)\cap E=\emptyset.
+$$
+Therefore
+$$
+B(x,r)\subset X\setminus E.
+$$
+
+Since every $x\in X\setminus E$ has an open ball contained in $X\setminus E$, the set $X\setminus E$ is open. Hence $E$ is closed.
 ::
 
 ::ProblemBlock{number=8}
@@ -559,24 +598,79 @@ $$
 $$
 
 #proof
-<span style="display:inline-block; width:1em;"></span> **(a)** This is Young's inequality. Since $1/p+1/q=1$, the weighted arithmetic-geometric mean inequality gives, for positive numbers $A,B$,
+<span style="display:inline-block; width:1em;"></span> **(a)** 
+This is the Young's inequality. We prove  it directly.
+
+Assume $x,y\ge 0$ and $p,q>1$ satisfy
 $$
-A^{1/p}B^{1/q}\le \frac{A}{p}+\frac{B}{q}.
+\frac{1}{p}+\frac{1}{q}=1.
 $$
-Taking
+If $y=0$, then the inequality is clear. So assume $y>0$.
+
+Define
 $$
-A=x^p,
-\qquad
-B=y^q,
+F(x)=\frac{x^p}{p}-xy+\frac{y^q}{q},
+\qquad x\ge 0.
 $$
-we get
+We want to prove
 $$
-A^{1/p}B^{1/q}=xy.
+F(x)\ge 0.
+$$
+
+Differentiate with respect to $x$:
+$$
+F'(x)=x^{p-1}-y.
+$$
+Thus the critical point satisfies
+$$
+x^{p-1}=y,
+$$
+so
+$$
+x=y^{1/(p-1)}.
+$$
+Since
+$$
+F''(x)=(p-1)x^{p-2}\ge 0,
+$$
+this critical point gives the minimum of $F$.
+
+Now let
+$$
+x_0=y^{1/(p-1)}.
+$$
+Since
+$$
+q=\frac{p}{p-1},
+$$
+we have
+$$
+x_0^p=y^{p/(p-1)}=y^q
+$$
+and
+$$
+x_0y=y^{1/(p-1)}y=y^{p/(p-1)}=y^q.
 $$
 Therefore
 $$
+F(x_0)=
+\frac{y^q}{p}-y^q+\frac{y^q}{q}=
+y^q\left(\frac{1}{p}+\frac{1}{q}-1\right)
+=0.
+$$
+Hence the minimum value of $F$ is $0$, so
+$$
+F(x)\ge 0.
+$$
+Therefore
+$$
+\frac{x^p}{p}-xy+\frac{y^q}{q}\ge 0,
+$$
+which gives
+$$
 xy\le \frac{x^p}{p}+\frac{y^q}{q}.
 $$
+
 
 <span style="display:inline-block; width:1em;"></span> **(b)** We prove the stronger Holder inequality
 $$

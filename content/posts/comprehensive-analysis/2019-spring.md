@@ -101,13 +101,15 @@ d(x,z)\le \max(d(x,y),d(y,z)).
 $$
 Let $(X,d)$ be an ultrametric space. Prove the following:
 
-1. If $B$ is an open ball in $X$, then any point in $B$ is a center of $B$. Recall that an open ball is a set of the form
+<span style="display:inline-block; width:1em;"></span> **(1)** 
+ If $B$ is an open ball in $X$, then any point in $B$ is a center of $B$. Recall that an open ball is a set of the form
 $$
 B(x;r):=\{y\in X:d(x,y)<r\};
 $$
 $x$ is referred to as a center of the ball.
 
-2. Every open ball in $X$ is both open and closed.
+<span style="display:inline-block; width:1em;"></span> **(2)** 
+ Every open ball in $X$ is both open and closed.
 
 #proof
 Let $B=B(x;r)$ be an open ball, and let $y\in B$. Thus

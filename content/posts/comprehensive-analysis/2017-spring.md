@@ -13,7 +13,7 @@ Clearly $x_0\in A$, so $A$ is nonempty.
 
 We first show that $A$ is open. Let $a\in A$. Since $X$ is locally pathconnected, there is a pathconnected neighborhood $U$ of $a$. If $u\in U$, then there is a path in $U$ from $a$ to $u$. Since $a\in A$, there is also a path from $x_0$ to $a$. Concatenating these two paths gives a path from $x_0$ to $u$. Hence $u\in A$, so $U\subset A$. Thus $A$ is open.
 
-We next show that $X\setminus A$ is open. Let $b\in X\setminus A$. Again, choose a pathconnected neighborhood $V$ of $b$. If $V$ met $A$, then for some $v\in V\cap A$ there would be a path from $x_0$ to $v$. Since $V$ is pathconnected, there would also be a path from $v$ to $b$. Concatenating these paths would give a path from $x_0$ to $b$, contradicting $b\notin A$. Hence $V\cap A=\varnothing$, so $V\subset X\setminus A$. Therefore $X\setminus A$ is open.
+We next show that $X\setminus A$ is open. Let $b\in X\setminus A$. Again, choose a pathconnected neighborhood $V$ of $b$. If $V$ met $A$, then for some $v\in V\cap A$ there would be a path from $x_0$ to $v$. Since $V$ is pathconnected, there would also be a path from $v$ to $b$. Concatenating these paths would give a path from $x_0$ to $b$, contradicting $b\notin A$. Hence $V\cap A=\emptyset$, so $V\subset X\setminus A$. Therefore $X\setminus A$ is open.
 
 Thus $A$ is both open and closed in $X$. Since $X$ is connected and $A$ is nonempty, we must have $A=X$. Therefore every point of $X$ can be joined to $x_0$ by a path. If $x,y\in X$, join $x$ to $x_0$ and then $x_0$ to $y$; after reversing the first path if necessary, this gives a path from $x$ to $y$. Hence $X$ is pathconnected.
 ::
@@ -26,7 +26,7 @@ f(x):=\sum_{n=2}^{\infty}\left(\frac{x}{\ln n}\right)^n.
 $$
 Is $f$ continuous on $\mathbb{R}$? Justify your answer.
 
-#solution
+#proof
 Yes, $f$ is continuous on $\mathbb{R}$.
 
 For each fixed $x\in \mathbb{R}$, consider the series

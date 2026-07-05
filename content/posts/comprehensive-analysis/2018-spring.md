@@ -23,19 +23,19 @@ and
 $$
 B=\{q\in \mathbb{Q}: E\cap (q,\infty) \text{ is countable}\}.
 $$
-By the assumption, $\mathbb{Q}=A\cup B$. Also $A\cap B=\varnothing$, because if $q\in A\cap B$, then
+By the assumption, $\mathbb{Q}=A\cup B$. Also $A\cap B=\emptyset$, because if $q\in A\cap B$, then
 $$
 E\subset \bigl(E\cap (-\infty,q)\bigr)\cup \{q\}\cup \bigl(E\cap (q,\infty)\bigr),
 $$
 which would make $E$ countable.
 
-Both $A$ and $B$ are nonempty. Indeed, if $A=\varnothing$, then $B=\mathbb{Q}$, so for every rational $q$, the set $E\cap (q,\infty)$ is countable. Since every point of $E$ lies in $(q,\infty)$ for some rational $q$, we get
+Both $A$ and $B$ are nonempty. Indeed, if $A=\emptyset$, then $B=\mathbb{Q}$, so for every rational $q$, the set $E\cap (q,\infty)$ is countable. Since every point of $E$ lies in $(q,\infty)$ for some rational $q$, we get
 $$
 E=\bigcup_{q\in \mathbb{Q}} \bigl(E\cap (q,\infty)\bigr),
 $$
-a countable union of countable sets, contradiction. Similarly, $B\neq \varnothing$.
+a countable union of countable sets, contradiction. Similarly, $B\neq \emptyset$.
 
-The set $A$ is downward closed in $\mathbb{Q}$, and $B$ is upward closed in $\mathbb{Q}$. Moreover, every element of $A$ is smaller than every element of $B$; otherwise, if $b<a$ with $b\in B$ and $a\in A$, then $b\in A$ by downward closure of $A$, contradicting $A\cap B=\varnothing$.
+The set $A$ is downward closed in $\mathbb{Q}$, and $B$ is upward closed in $\mathbb{Q}$. Moreover, every element of $A$ is smaller than every element of $B$; otherwise, if $b<a$ with $b\in B$ and $a\in A$, then $b\in A$ by downward closure of $A$, contradicting $A\cap B=\emptyset$.
 
 Let
 $$

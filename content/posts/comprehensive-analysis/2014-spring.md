@@ -216,9 +216,7 @@ $$
 =\frac{128\pi}{5}.
 $$
 So the value of the integral is
-$$
-\boxed{\frac{128\pi}{5}}.
-$$
+$\frac{128\pi}{5}.$
 ::
 
 ::ProblemBlock{number=5}
