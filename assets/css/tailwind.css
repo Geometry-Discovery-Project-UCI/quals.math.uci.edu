@@ -6,8 +6,13 @@ html {
     @apply scroll-smooth;
 }
 
-.math path {
-    @apply stroke-[36px];
+.math mjx-container,
+.math svg,
+.math svg g,
+.math path,
+.math use {
+    stroke: currentColor !important;
+    stroke-width: 36px !important;
 }
 
 .math-inline svg {
@@ -25,7 +30,7 @@ html {
 @font-face {
     font-family: 'SF_Cartoonist_Hand';
     font-style: italic;
-    font-weight: 400;
+    font-weight: 700;
     font-display: swap;
     src: url('/fonts/SF_Cartoonist_Hand/SF_Cartoonist_Hand_Bold_Italic.ttf') format('truetype');
 }
@@ -33,13 +38,32 @@ html {
 @font-face {
     font-family: 'SF_Cartoonist_Hand';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-display: swap;
     src: url('/fonts/SF_Cartoonist_Hand/SF_Cartoonist_Hand_Bold.ttf') format('truetype');
 }
 
 .problem-block {
+    .problem-heading {
+        font-weight: 700;
+        text-shadow:
+            0.8px 0 currentColor,
+            -0.8px 0 currentColor,
+            0 0.45px currentColor;
+    }
+
     strong {
-        @apply text-inherit;
+        @apply font-bold text-inherit;
+        text-shadow:
+            0.65px 0 currentColor,
+            -0.65px 0 currentColor;
+
+        .math mjx-container,
+        .math svg,
+        .math svg g,
+        .math path,
+        .math use {
+            stroke-width: 64px !important;
+        }
     }
 }
