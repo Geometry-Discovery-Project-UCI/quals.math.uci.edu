@@ -1,3 +1,5 @@
+<!-- markdownlint-disable -->
+
 # 2009 Spring Comprehensive in Analysis
 
 ::ProblemBlock{number=1}
@@ -571,4 +573,15 @@ Hence
 $$
 \lim_{n\to\infty}\int_0^1 x^n f(x)\,dx=0.
 $$
+#remark
+For improper integrable functions, the statement is also true if $f$ is absolutely integrable, meaning
+$$
+\int_0^1 |f(x)|\,dx<\infty.
+$$
+
+The proof follows from the fact that for any $0<\delta<1$, we have
+$$
+\left|\int_0^1 x^n f(x)\,dx\right|\le (1-\delta)^n\int_0^1|f(x)|\,dx+\int_{1-\delta}^1|f(x)|\, dx.
+$$
+
 ::

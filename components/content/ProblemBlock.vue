@@ -1,21 +1,21 @@
 <template>
   <AppCard class="bg-amber-50 w-full problem-block">
     <div class="text-red-500">
-      <h3 :id="`problem-${number}`" class="my-1 text-problem">
+      <h3 :id="`problem-${number}`" class="my-1 text-problem problem-heading">
         Problem {{ number }}.
       </h3>
       <hr class="mt-1 mb-2 border-problem border rounded-full">
       <slot name="problem" />
     </div>
     <div class="text-problem">
-      <h3 :id="`proof-${number}`" class="my-1 text-problem">
+      <h3 :id="`proof-${number}`" class="my-1 text-problem problem-heading">
         Proof.
       </h3>
       <hr class="mt-1 mb-2 border-problem border rounded-full">
       <slot name="proof" />
     </div>
     <div v-if="$slots.remark" class=" text-cyan-700">
-      <h3 :id="`remark-${number}`" class="my-1 text-problem">
+      <h3 :id="`remark-${number}`" class="my-1 text-problem problem-heading">
         Remark.
       </h3>
       <hr class="mt-1 mb-2 border-problem border rounded-full">

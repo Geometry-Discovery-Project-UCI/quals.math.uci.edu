@@ -146,7 +146,7 @@ Let $X$ be a metric space. Prove or disprove:
 
 Let $X=\mathbb{R}$ with the usual metric. The set $\mathbb{Q}$ of rational numbers is dense in $\mathbb{R}$, and the set $\mathbb{R}\setminus\mathbb{Q}$ of irrational numbers is also dense in $\mathbb{R}$. However,
 $$
-\mathbb{Q}\cap(\mathbb{R}\setminus\mathbb{Q})=\varnothing,
+\mathbb{Q}\cap(\mathbb{R}\setminus\mathbb{Q})=\emptyset,
 $$
 which is not dense in $\mathbb{R}$. Thus the intersection of finitely many dense subsets need not be dense.
 
@@ -162,9 +162,41 @@ It remains to prove that $G$ is dense. Let $U$ be any nonempty open subset of $X
 $$
 U\cap G_1\cap G_2
 $$
-is nonempty and open. Continuing inductively, we obtain
+is nonempty and open. 
+ In fact, let
 $$
-U\cap G_1\cap\cdots\cap G_m\neq\varnothing.
+V=U\cap G_1.
+$$
+Since $G_1$ is dense in $X$ and $U$ is a nonempty open subset of $X$, we have
+$$
+U\cap G_1\neq \emptyset.
+$$
+Thus $V$ is nonempty. Also, since both $U$ and $G_1$ are open, $V$ is open.
+
+Pick any point $x\in V$. Since $V$ is open, there exists $\varepsilon>0$ such that
+$$
+B(x,\varepsilon)\subset V.
+$$
+Since $G_2$ is dense in the metric space $X$, every nonempty open ball in $X$ intersects $G_2$. Therefore
+$$
+B(x,\varepsilon)\cap G_2\neq\emptyset.
+$$
+But $B(x,\varepsilon)\subset V=U\cap G_1$, so
+$$
+V\cap G_2\neq\emptyset.
+$$
+Hence
+$$
+(U\cap G_1)\cap G_2\neq\emptyset,
+$$
+or equivalently,
+$$
+U\cap G_1\cap G_2\neq\emptyset.
+$$
+
+Continuing inductively, we obtain
+$$
+U\cap G_1\cap\cdots\cap G_m\neq\emptyset.
 $$
 Thus every nonempty open set $U$ intersects $G$, so $G$ is dense in $X$.
 ::

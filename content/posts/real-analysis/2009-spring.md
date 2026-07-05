@@ -1,3 +1,5 @@
+<!-- markdownlint-disable -->
+
 # 2009 Spring Real Analysis
 
 ::ProblemBlock{number=1}
@@ -6,7 +8,7 @@ Let $(X,\mathcal{A},\mu)$ be a measure space. Let $(f_n : n\in\N)$ and $f$ be re
 
 #proof
 Since $F$ is uniformly continuous, for any $\eps>0$, there is a $\delta>0$ such that whenever $|x-y|<\delta$, we have
-$F(x)-F(y)<\eps$. Thus we have 
+$|F(x)-F(y)|<\eps$. Thus we have 
 $$
 \{x\mid |F(f_n(x))-F(f(x))|\geq\eps\}\subset \{x\mid |f_n(x)-f(x)|\geq\delta\}.
 $$
