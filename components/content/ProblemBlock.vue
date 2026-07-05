@@ -7,12 +7,14 @@
       <hr class="mt-1 mb-2 border-problem border rounded-full">
       <slot name="problem" />
     </div>
-    <div class="text-problem">
-      <h3 :id="`proof-${number}`" class="my-1 text-problem problem-heading">
-        Proof.
+    <div v-if="$slots.proof || $slots.solution || $slots.solutions" class="text-problem">
+      <h3 :id="`${$slots.proof ? 'proof' : 'solution'}-${number}`" class="my-1 text-problem problem-heading">
+        {{ $slots.proof ? 'Proof.' : 'Solution.' }}
       </h3>
       <hr class="mt-1 mb-2 border-problem border rounded-full">
-      <slot name="proof" />
+      <slot v-if="$slots.proof" name="proof" />
+      <slot v-else-if="$slots.solution" name="solution" />
+      <slot v-else name="solutions" />
     </div>
     <div v-if="$slots.remark" class=" text-cyan-700">
       <h3 :id="`remark-${number}`" class="my-1 text-problem problem-heading">

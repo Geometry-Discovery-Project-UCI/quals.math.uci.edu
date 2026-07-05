@@ -158,7 +158,7 @@ $$
 \lim_{n\to\infty}\int_1^\infty \frac{n\sin(x^2/n)}{x^4}\,dx.
 $$
 
-#solution
+#proof
 For each fixed $x\ge 1$,
 $$
 \lim_{n\to\infty}\frac{n\sin(x^2/n)}{x^4}
@@ -194,10 +194,7 @@ $$
 =\left[-\frac{1}{x}\right]_1^\infty
 =1.
 $$
-Therefore the value of the limit is
-$$
-\boxed{1}.
-$$
+Therefore the value of the limit is $1$.
 ::
 
 ::ProblemBlock{number=5}
@@ -275,7 +272,7 @@ K_{\alpha_0}\subset A.
 $$
 Now take any $\beta$. By hypothesis,
 $$
-K_{\alpha_0}\cap K_\beta\neq\varnothing.
+K_{\alpha_0}\cap K_\beta\neq\emptyset.
 $$
 Since $K_{\alpha_0}\subset A$, the set $K_\beta$ meets $A$. But $K_\beta$ is connected and must lie entirely in either $A$ or $B$. Since it meets $A$, it cannot lie in $B$. Hence
 $$
@@ -301,7 +298,7 @@ q\in K_\beta.
 $$
 By hypothesis,
 $$
-K_\alpha\cap K_\beta\neq\varnothing.
+K_\alpha\cap K_\beta\neq\emptyset.
 $$
 Choose a point
 $$
@@ -348,7 +345,7 @@ $$
 $$
 Find the area of $U$.
 
-#solution
+#proof
 Write
 $$
 x(t)=3t^2-t^3,
@@ -399,9 +396,7 @@ $$
 =-\frac{81}{10}.
 $$
 The negative sign means the curve is oriented clockwise. Therefore the area is
-$$
-\boxed{\frac{81}{10}}.
-$$
+$\frac{81}{10}$.
 ::
 
 ::ProblemBlock{number=9}
@@ -414,7 +409,7 @@ D_{x,y}=\{(u,v)\in\mathbb{R}^2\mid u^2+v^2\le x^2+y^2\}.
 $$
 Is $F(x,y)$ differentiable? If yes, find the differential $DF$.
 
-#solution
+#proof
 Yes, $F$ is differentiable everywhere.
 
 Let

@@ -39,9 +39,9 @@ $$
 =
 -\frac{(x-1)(x-2)}{\sqrt{3x-2}+x}.
 $$
-Thus, for $1<x<2$, we have $\phi(x)>x$, and for $x>2$, we have $\phi(x)<x$. Moreover, $\phi(x)<2$ when $x<2$, and $\phi(x)>2$ when $x>2$.
+Thus, for $1<x<2$, we have $2>\phi(x)>x$.
 
-If $3/2<a_1<2$, then $\{a_n\}$ is increasing and bounded above by $2$. If $a_1=2$, then $a_n=2$ for all $n$. If $a_1>2$, then $\{a_n\}$ is decreasing and bounded below by $2$. In every case, $\{a_n\}$ converges.
+ Since $2>a_1>1$, then $\{a_n\}$ is increasing and bounded below by $2$. In every case, $\{a_n\}$ converges.
 
 Let $\lim_{n\to\infty}a_n=L$. Passing to the limit in
 $$
@@ -322,9 +322,9 @@ $$
 #problem
 Let $f$ be a bounded function on $[a,b]$. Prove or disprove each statement.
 
-<span style="display:inline-block; width:1em;"></span> **(a)** If $f(x)^2$ is integrable on $[a,b]$, then $f$ is integrable.
+<span style="display:inline-block; width:1em;"></span> **(a)** If $f(x)^2$ is Reiemann integrable on $[a,b]$, then $f$ is Reiemann integrable.
 
-<span style="display:inline-block; width:1em;"></span> **(b)** If $f(x)^3$ is integrable on $[a,b]$, then $f$ is integrable.
+<span style="display:inline-block; width:1em;"></span> **(b)** If $f(x)^3$ is Reiemann integrable on $[a,b]$, then $f$ is Reiemann integrable.
 
 #proof
 <span style="display:inline-block; width:1em;"></span> **(a)** The statement is false.
