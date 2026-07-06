@@ -91,7 +91,7 @@ Since for fixed $x$, we have
 $$
                         \lim_{h\to 0^+} |f(t)|^4\,I_{[x,x+h]}(t)=0
 $$
-almost everywhere, by the [Lebesgue's dominated convergence theorem](en.wikipedia.org/wiki/Dominated_convergence_theorem), we get
+almost everywhere, by the [Lebesgue's dominated convergence theorem](https://en.wikipedia.org/wiki/Dominated_convergence_theorem), we get
 $$
                         \lim_{h\to 0^+} \frac{F(x+h)-F(x)}{h^{3/4}}=0.
 $$
