@@ -114,7 +114,7 @@ By the above first inequality, we have
 $$
  \mu(\{x : |f(x)|\geq\lambda\})\to 0.
 $$
-Applying the Dominated convergence theorem](https://en.wikipedia.org/wiki/Dominated_convergence_theorem), we know that the above right side tends to zero as $\lambda\to\infty$.
+Applying the [Dominated convergence theorem](https://en.wikipedia.org/wiki/Dominated_convergence_theorem), we know that the above right side tends to zero as $\lambda\to\infty$.
 
 ::
 

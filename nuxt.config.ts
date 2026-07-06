@@ -6,7 +6,17 @@ export default defineNuxtConfig({
   ],
   vue: {
     compilerOptions: {
-      isCustomElement: tag => ['defs', 'g', 'mjx-container', 'path', 'use'].includes(tag.toLowerCase())
+      isCustomElement: tag => [
+        'defs',
+        'g',
+        'line',
+        'mjx-container',
+        'mjxcontainer',
+        'path',
+        'rect',
+        'text',
+        'use'
+      ].includes(tag.toLowerCase())
     }
   },
   app: {
