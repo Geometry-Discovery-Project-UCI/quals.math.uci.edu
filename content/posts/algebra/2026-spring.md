@@ -1,4 +1,4 @@
-# 2023 Spring Quals in Algebra
+# 2026 Spring Quals in Algebra
 
 ::ProblemBlock{number=1}
 #problem
