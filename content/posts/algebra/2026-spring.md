@@ -346,4 +346,25 @@ A polynomial has a repeated root if and only if it has a nonconstant common divi
 
 $$
 f(x)-f'(x)=\frac{x^n}{n!}.
+$$
+Therefore, if $f$ and $f'$ have a nontrivial divisor then they must both be divisible by $x$. But $x$ clearly does not divide $f(x)$, so $f(x)$ has no repeated roots.
+::
+
+::ProblemBlock{number=10}
+#problem
+For each of the questions below, say whether the statement is True or False and give a brief justification.
+
+<span style="display:inline-block; width:1em;"></span> **(a)** Let $F \subseteq K \subseteq L$ be field extensions for which $K/F$ is Galois and $L/K$ is Galois. Then $L/F$ is also Galois.
+
+<span style="display:inline-block; width:1em;"></span> **(b)** Let $R$ be a commutative ring with unity and let $M$ be a finitely generated $R$-module. Let $N$ be a submodule of $M$. Then $N$ is a finitely generated $R$-module.
+
+#proof
+<span style="display:inline-block; width:1em;"></span> **(a)** **False:** Take $F=\Q$, $K=\Q(\sqrt{2})$, and $L=\Q(\sqrt[4]{2})$. Both $K/F$ and $L/K$ are quadratic extensions in characteristic zero and therefore are Galois. However, $L/F$ is not Galois because $\sqrt[4]{2}\in L$ is conjugate to $i\sqrt[4]{2}\notin L$ over $\Q$, so that $L/F$ is not a normal extension.
+
+<span style="display:inline-block; width:1em;"></span> **(b)** **False:** Let $R=M=\Z[x_1,x_2,x_3,\dots]$ be a polynomial ring in a countably infinite set of indeterminates. This is a finitely generated $R$-module, with generating set $\{1\}$. Consider the ideal
+\[
+N=(x_1,x_2,x_3,\ldots).
+\]
+This is a submodule of $R$. Any finite generating set would involve only finitely many of the indeterminates $x_i$ and therefore could not generate the entire ideal. Thus, $N$ is not finitely generated as an $R$-module.
+
 ::
